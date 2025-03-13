@@ -1,0 +1,778 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.scroll-up-btn{
+    position:fixed;
+    height:45px;
+    width:42px;
+    background: crimson;
+    right:30px;
+    bottom:30px;
+    text-align: center;
+    line-height: 45px;
+    color:#fff;
+    font-size: 30px;
+    z-index: 9999;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity:0;
+    pointer-events: none;
+    transition: all 0.3 ease;
+    
+}
+
+.scroll-up-btn.show{
+    bottom:30px;
+    opacity:1;
+    pointer-events: auto;
+}
+
+:root {
+    --body-color: #E4E9F7;
+    --nav-color: crimson;
+    --side-nav: #010718;
+    --text-color: #fff;
+    --span-color: red;
+
+
+}
+
+/*body.dark{
+    --body-color:#010718;
+    --nav-color:#010718;
+    --side-nav:#010718;
+    --text-color:#fff;
+    --span-color:#FFF;
+
+}*/
+
+.max-width{
+    max-width: 1300px;
+    padding:0 80px;
+    margin:auto;
+}
+
+body {
+    height: 100vh;
+    background-color: #fff;
+}
+
+
+
+/*navbar styling*/
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index:999;/*(Higher value on top)controls the stacking order of elements. It determines which elements appear on top of others when they overlap.*/
+    padding: 30px 0;
+    transition: all 0.3s ease;
+    font-family: sans-serif;
+
+}
+
+.navbar.sticky {
+    padding: 15px 0;
+    background-color: var(--nav-color);
+}
+
+
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: var(--text-color);
+    font-size: 30px;
+    padding: 12px;
+
+}
+
+
+.navbar .logo span {
+
+    color: var(--nav-color);
+
+}
+
+.navbar.sticky .logo a span {
+
+    color: var(--text-color);
+
+}
+
+.navbar .menu li {
+    list-style-type: none;
+    display: inline-block
+}
+
+.navbar .menu li a {
+    display: block;
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 40px;
+    transition: all 0.4 ease;
+}
+
+.navbar .menu li a:hover {
+    color: var(--nav-color);
+}
+
+.navbar.sticky li a:hover {
+    color: var(--text-color);
+}
+
+/* menu btn styling*/
+.menu-btn {
+    font-size: 25px;
+    color: #FFF;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+/*home section*/
+.home {
+    display: flex;
+    background: url("images/K.png") no-repeat center;
+    height: 100vh;
+    color: var(--nav-color);
+    min-height: 500px;
+    font-family: sans-serif;
+
+
+}
+
+
+.home .max-width {
+    margin: auto 0 auto 40px;
+
+}
+
+.home .home-content .text-1 {
+    font-size: 27px;
+    color: var(--text-color);
+
+}
+
+
+.home .home-content .text-2 {
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+    color: var(--text-color);
+
+}
+
+.home .home-content .text-3 {
+    font-size: 40px;
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+.home .home-content .text-3 span {
+    color: var(--span-color);
+
+}
+
+.home .home-content a {
+    display: inline-block;
+    color: #fff;
+    background: crimson;
+    font-size: 15px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 2px solid crimson;
+    transition: all 0.4s ease;
+}
+
+.home .home-content a:hover {
+    color: #fff;
+    background: none;
+}
+
+/*About section starts*/
+
+section{
+ padding:100px 0;
+}
+.about, .contact,footer,.skills{
+    font-family: 'Poppins',sans-serif;
+}
+
+.about .title{
+text-align: center;
+font-size: 40px;
+font-weight: 500;
+margin-bottom:60px;
+padding-bottom: 20px;
+font-family: 'Ubuntu',sans-serif;
+}
+
+.about .title::before{/*Get the vertical  line above about me*/
+    content:"";
+    position:absolute;
+    bottom:-170px;
+    left:50%;
+    width:180px;
+    height:3px;
+    background-color: #111;
+    transform: translateX(-47%); 
+   
+}
+
+.about .title::after{/*Get the vertical  line above about me*/
+    content:"who i am";
+    position:absolute;
+    bottom:-180px;
+    left:50%;
+    font-size: 20px;
+    color:crimson;
+    padding:5px;
+    background: #fff;
+    transform: translateX(-47%);
+}
+
+.about .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-content .left{
+    width: 45%;
+}
+
+.about .about-content .right{
+    width:55%;
+}
+
+.about .about-content .right  .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;;
+}
+
+.about  .about-content .right .text span{
+    color:crimson;
+}
+
+.about .about-content .right p{
+    text-align: justify;
+}
+
+.about .about-content .right a {
+    display:inline-block;
+    background: crimson;
+    color:#fff;
+    font-size: 20px;
+    padding:10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border:2px  solid crimson;
+    transition:  all 0.3s ease;
+
+}
+
+.about .about-content .right a:hover{
+    color:crimson;
+    background:none;
+}
+
+
+
+
+
+
+.about .about-content .left img{
+    height:400px;
+    width:400px;
+    object-fit: cover;/*Fit the photo to cover size*/
+    border-radius: 8px;
+    
+}
+
+/*Contact section*/
+
+
+
+.contact{
+       font-family: 'Poppins',sans-serif;
+   }
+.contact .contact-content{
+  display:flex;
+}
+
+
+   
+   
+.contact .title{
+   text-align: center;
+   font-size: 40px;
+   font-weight: 500;
+   margin-bottom:60px;
+   padding-bottom: 20px;
+   font-family: 'Ubuntu',sans-serif;
+   } 
+
+.contact .title::before{
+    content: "";
+    position:absolute;
+    bottom:-1400px;
+    left:50%;
+    width:180px;
+    height:3px;
+    background-color: #111;
+    transform: translateX(-50%);
+}
+
+.contact .title::after{
+    content:"get in touch";
+    position:absolute;
+    bottom:-1410px;
+    left:50%;
+    color:crimson;
+    background: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding:4px;
+    transform: translateX(-47%);
+}
+
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+
+.contact .contact-content .column .pa{
+    font-size: 18px;
+    font-weight: 700;
+    height:120px;
+    width:350px;
+    margin-top:12px;
+    border:1px solid skyblue;
+    border-radius: 12px;
+    background:skyblue;
+    margin-right: 10px;
+}
+
+.contact .contact-content .column .pa p{
+    margin-left:10px;
+    margin-top: 10px;;
+}
+
+
+
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact .contact-content .left p{
+    text-align: justify;
+}
+
+.contact .contact-content .left .icons{
+    margin:10px 0;
+}
+
+.contact .contact-content .row{
+    display:flex;
+    align-items: center;
+    height:65px;
+}
+
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+
+.contact .contact-content .row i{
+    font-size: 25px;
+    color:crimson;   
+}
+
+.contact .contact-content .info .head{
+    font-weight: 600;
+}
+
+
+.contact .contact-content .info .sub-title{
+    color:#333;
+}
+
+.contact .right form .fields{
+    display:flex;
+}
+
+.contact .right form .fields,
+.contact .right form .fields, .field{
+    height:45px;
+    width:100%;
+    margin-bottom:15px;
+}
+
+.contact .right form .name{
+    margin-right:10px;
+}
+   
+.contact .right form .email{
+    margin-left:10px;
+}
+
+.contact .right form .textarea{
+    height:80px;
+   
+}
+
+
+
+.contact .right form .field input,
+.contact .right form .textarea textarea {
+    height:100%;
+    width:100%;
+    border:1px solid lightgrey;
+    border-radius: 6px;
+    outline:none;
+    padding:0 15px;
+    font-size: 17px;
+    font-family: 'Poppins',sans-serif;
+}
+
+.contact .right form .textarea textarea{
+    padding-top:10px;
+    resize:none;
+}
+
+.contact .right form .button{
+    height:47px;
+    width:100%;
+}
+
+.contact .right form .button button{
+    width:30%;
+    height:100%;
+    border-radius: 10px;
+    border:1px solid crimson;
+    color:#111;
+    background: crimson;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+.contact .right form .button button:hover{
+    background: none;
+    color:crimson;
+}
+
+/*Skills section styling*/
+.skills .title{
+    font-family: 'Poppins',sans-serif;
+}
+
+.skills .title{
+    text-align: center;
+    margin-bottom:10px;
+    font-size: 35px;
+    
+}
+.skills .skills-content{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.skills .column .text-1{
+    font-size: 25px;
+    margin-top:20px;
+    margin-bottom: 12px;
+}
+.skills .column .text-2{
+    font-size: 25px;
+    margin-bottom: 23px;
+}
+
+.skills .column .text-3{
+    font-size: 25px;
+    margin-bottom: 20px;;
+
+}
+
+.skills .right{
+    margin-top:-75px;
+}
+/*.skills .column span{
+    height:20px; 
+    font-size: 1S5px;
+    padding:10px;
+    border-radius: 10px;;
+    width:35px;
+    border:1 px solid blue;
+    background-color:lightblue;
+   
+}*/
+
+.skills .column .p{
+    font-size :15px;
+    margin-bottom:6px;
+    padding:6px;
+    border-radius:8px;
+    border:1px solid pink;
+    text-align: center;
+    background-color: pink;
+    width:55px;
+
+}
+
+.skills .column .p1{
+    font-size: 15px;
+    margin-bottom: 6px;
+    border:1px solid pink;
+    background-color: pink;
+    border-radius:8px;
+    padding:6px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/*Footer section styling*/
+footer{
+    background: #111;
+    padding: 20px 23px;
+    color:white;
+}
+
+footer span a{
+    color:crimson;
+    
+
+}
+
+footer span a:hover{
+    text-decoration: underline;
+
+}
+
+
+
+
+
+
+/*css to toggle dark and light mode
+.navbar .dark-light{
+    height:40px;
+    width:40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.dark-light i{
+    position:absolute;
+    color:white;
+    font-size: 22px;
+    cursor:pointer
+
+}
+
+.dark-light i.sun{
+    opacity:0;
+    pointer-events: none;
+
+}
+
+
+
+.dark-light.active i.moon{
+    opacity:0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun{
+    opacity:1;
+    pointer-events: auto;
+}
+*/
+/*Responsive design for the size adjustment*/
+@media (max-width:1100px) {
+    .home .max-width {
+        margin-left: 0px;
+    }
+
+   
+}
+
+@media (max-width:990px) {
+    .max-width {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width:947px) {
+
+    .navbar .menu-btn {
+        display: block;
+        z-index: 999;
+        font-size: 35px;
+    }
+
+    .menu-btn i.active:before {
+        content: "X";
+    }
+
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 60%;
+        left: 100%;
+        /*display menu from (+)right or (-)left*/
+        top: 0;
+        padding-top: 80px;
+        text-align: center;
+        background-color: #010718;
+        transition: all 0.7s ease;
+
+    }
+
+    .navbar .menu.active {
+        left:300px;
+
+    }
+
+    .navbar .menu li {
+        display: block;
+    }
+
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+
+    }
+
+    .home .home-content .text-2 {
+        font-size: 70px;
+    }
+
+    .home .home-content .text-3 {
+        font-size: 35px;
+    }
+
+    .home .home-content a {
+        font-size: 23px;
+        padding: 10px 30px;
+
+    }
+
+    .max-width{
+        max-width: 800px;
+    }
+    
+    .about .about-content .column
+    {
+        width:100%;/*Both column gets the width of 100%*/
+    }
+
+    .about .about-content .left{/*Get the image in the center applying below css properties*/
+        display:flex;
+        justify-content: center;
+        margin:0 auto 60px;
+    }
+
+   
+    .about .about-content .right{
+        flex:100%;/*Get the full size for the text*/
+    }
+
+    .contact .contact-content{
+        display:inline;
+      }
+
+      .contact .contact-content .column{
+        width:100%;
+        margin-bottom: 30px;
+      }
+
+      .contact .contact-content .left{
+       justify-content: center;
+      }
+
+
+ 
+
+    .contact .title::before{
+        bottom:-1630px;   
+    }
+
+    .contact .title::after{
+        bottom:-1642px;
+        font-weight: 600; 
+
+    }
+
+
+
+}
+
+@media (max-width:600px) {
+    .contact .title::before{
+        bottom:-1690px;
+          
+    }
+
+    .contact .title::after{
+        bottom:-1700px; 
+        font-weight: 600;
+
+    }
+    
+}
+
+@media (max-width:690px) {
+    .max-width {
+        padding: 0 23px;
+    }
+
+    .home .home-content .text-2 {
+        font-size: 60px;
+    }
+
+    .home .home-content .text-3 {
+        font-size: 32px;
+    }
+
+    .home .home-content a {
+        font-size: 20px;
+        padding: 8px 20px;
+    }
+
+}
+
+@media (max-width:500px) {
+    .home .home-content .text-2 {
+        font-size: 50px;
+    }
+
+    .home .home-content .text-3 {
+        font-size: 27px;
+    }
+}
