@@ -147,7 +147,7 @@ body {
 /*home section*/
 .home {
     display: flex;
-    background: url("images/K.png") no-repeat center;
+    background: url("K.png") no-repeat center;
     height: 100vh;
     color: var(--nav-color);
     min-height: 500px;
